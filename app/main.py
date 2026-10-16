@@ -1,6 +1,7 @@
 """FastAPI app: Facebook webhook, demo page, and the read-only lead feed."""
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import statistics
@@ -64,6 +65,16 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
             "mock" if settings.mock_sheet else "apps-script",
             "mock" if settings.mock_notify else settings.notifier,
         )
+        if not settings.mock_sheet and settings.sheets_url:
+            # Apps Script cold-starts in several seconds; wake it now instead of on the first lead.
+            async def warm():
+                try:
+                    t = time.perf_counter()
+                    await http.get(settings.sheets_url, follow_redirects=True, timeout=30)
+                    log.info("sheet warm-up done in %.1fs", time.perf_counter() - t)
+                except Exception as e:
+                    log.warning("sheet warm-up failed (non-fatal): %s", e)
+            app.state.warmup = asyncio.create_task(warm())
         yield
         await app.state.pipeline.wait_idle(timeout=30)
         await http.aclose()

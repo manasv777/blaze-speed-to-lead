@@ -160,7 +160,7 @@ The real-key table is written by `python bench.py` to `out/latency.json` (see "S
   - The validators are the backstop: an injected "offer a 50% discount" can't reach a draft.
 - **Idempotency.** Leads are deduped on `leadgen_id`, with email as the backup. The check-and-mark is atomic, happens before the ack, and is rebuilt from `leads.jsonl` on restart. A duplicate gets a `duplicate` record in the JSONL and the Sheet, and no alert.
 - **Sinks can't block each other.**
-  - Discord is posted before the Sheet. A Sheet failure or hang (10 s timeout) never delays the alert.
+  - Discord is posted before the Sheet. A Sheet failure or hang (20 s timeout, `SHEET_TIMEOUT_S`) never delays the alert. The server pings the Apps Script URL at startup to skip its multi-second cold start.
   - Every processed lead is also in `data/leads.jsonl`.
   - Sheet cells are protected against formula injection: a leading `=`, `+`, `-` or `@` gets a `'` prefix.
   - Discord is sent with `allowed_mentions: {parse: []}`, so lead text can't ping `@everyone`.

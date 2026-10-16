@@ -38,7 +38,7 @@ class Settings:
     mock_sheet: bool = False
     mock_notify: bool = False
     mock_llm_fail: str = ""              # "", "timeout", "garbage" (demo the fallback)
-    sheet_timeout_s: float = 10.0
+    sheet_timeout_s: float = 20.0          # runs after the alert, so this never delays the rep
     notify_timeout_s: float = 10.0
     demo_enabled: bool = True
     price_in_per_mtok: float = 0.10      # Claude Haiku 5.5 list price, USD
@@ -70,6 +70,7 @@ class Settings:
             mock_notify=mock_all or _bool("MOCK_NOTIFY"),
             mock_llm_fail=os.getenv("MOCK_LLM_FAIL", ""),
             demo_enabled=_bool("DEMO_ENABLED", True),
+            sheet_timeout_s=float(os.getenv("SHEET_TIMEOUT_S") or 20),
         )
         return s
 
