@@ -108,7 +108,11 @@ Hi Asdf, thanks for reaching out to Blaze about your finance workflow. Happy to 
 Responded in 0.8s  (model: mock-llm). Nothing was sent to the lead.
 ```
 
-Demo page: [`out/demo_feed_mock.png`](out/demo_feed_mock.png), [`out/demo_expanded_mock.png`](out/demo_expanded_mock.png).
+Demo dashboard (`/demo`): a lead list with a detail view showing the score, the rules applied, the step-by-step pipeline timing, and copyable drafts. A slide-over form simulates leads, and sidebar filters cover Hot, Warm, Low, Call manually and Duplicates. Animations are subtle and respect `prefers-reduced-motion`.
+
+![dashboard](out/dashboard_mock.png)
+
+More: [`out/dashboard_lead_form_mock.png`](out/dashboard_lead_form_mock.png), [`out/dashboard_rules_mock.png`](out/dashboard_rules_mock.png).
 
 ## Latency (`bench.py`)
 
