@@ -1,0 +1,146 @@
+NEW LEAD  Dana Whitfield | Harborview Property Management
+Score: 5/5   Status: scored
+Reason: Mock: doors=240, pain=owner payout, reconcil
+Rule overrides: none
+Contact: dana@harborviewpm.com | +15128672291 | doors: 240
+Message: We manage 240 doors and owner payouts are eating my whole week. Every month-end I'm reconciling statements by hand. Need to fix this before next month.
+
+SMS draft (172 chars):
+Hi Dana, thanks for reaching out to Blaze about owner payout. Happy to show how we handle it across your 240 doors. Grab a 15-minute call: https://cal.com/your-handle/15min
+
+Email subject: Blaze for Harborview Property Management
+Hi Dana,
+
+Thanks for your note about owner payout. Blaze pays bills, invoices clients, and forecasts cash for property managers across your 240 doors.
+
+Would a 15-minute call help? Pick a time here: https://cal.com/your-handle/15min
+
+The Blaze team
+
+Responded in 1.0s  (model: mock-llm). Nothing was sent to the lead.
+
+--- Discord webhook JSON ---
+{
+  "content": "New lead. Responded in 1.0s",
+  "embeds": [
+    {
+      "title": "5/5  Dana Whitfield | Harborview Property Management",
+      "description": "**Mock: doors=240, pain=owner payout, reconcil**\n\n> We manage 240 doors and owner payouts are eating my whole week. Every month-end I'm reconciling statements by hand. Need to fix this before next month.",
+      "color": 3066993,
+      "fields": [
+        {
+          "name": "Contact",
+          "value": "dana@harborviewpm.com\n+15128672291",
+          "inline": true
+        },
+        {
+          "name": "Doors",
+          "value": "240",
+          "inline": true
+        },
+        {
+          "name": "Status",
+          "value": "scored",
+          "inline": true
+        },
+        {
+          "name": "Rule overrides",
+          "value": "none",
+          "inline": false
+        },
+        {
+          "name": "SMS draft",
+          "value": "Hi Dana, thanks for reaching out to Blaze about owner payout. Happy to show how we handle it across your 240 doors. Grab a 15-minute call: https://cal.com/your-handle/15min",
+          "inline": false
+        },
+        {
+          "name": "Email: Blaze for Harborview Property Management",
+          "value": "Hi Dana,\n\nThanks for your note about owner payout. Blaze pays bills, invoices clients, and forecasts cash for property managers across your 240 doors.\n\nWould a 15-minute call help? Pick a time here: https://cal.com/your-handle/15min\n\nThe Blaze team",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Responded in 1.0s \u00b7 mock-llm \u00b7 review before sending"
+      }
+    }
+  ],
+  "allowed_mentions": {
+    "parse": []
+  }
+}
+
+======================================================================
+
+NEW LEAD  asdf | asdf
+Score: 1/5   Status: scored
+Reason: Mock: doors=unknown, pain=none stated
+Rule overrides: fake contact cap: 2->1; FLAG fake contact: placeholder email 'test@test.com'; unparseable phone '555-0000'; placeholder name 'asdf'
+Contact: test@test.com | - | doors: asdf
+Message: asdf
+
+SMS draft (159 chars):
+Hi Asdf, thanks for reaching out to Blaze about your finance workflow. Happy to show how we handle it. Grab a 15-minute call: https://cal.com/your-handle/15min
+
+Email subject: Blaze for asdf
+Hi Asdf,
+
+Thanks for your note about your finance workflow. Blaze pays bills, invoices clients, and forecasts cash for property managers.
+
+Would a 15-minute call help? Pick a time here: https://cal.com/your-handle/15min
+
+The Blaze team
+
+Responded in 0.8s  (model: mock-llm). Nothing was sent to the lead.
+
+--- Discord webhook JSON ---
+{
+  "content": "New lead. Responded in 0.8s",
+  "embeds": [
+    {
+      "title": "1/5  asdf | asdf",
+      "description": "**Mock: doors=unknown, pain=none stated**\n\n> asdf",
+      "color": 9807270,
+      "fields": [
+        {
+          "name": "Contact",
+          "value": "test@test.com\n-",
+          "inline": true
+        },
+        {
+          "name": "Doors",
+          "value": "asdf",
+          "inline": true
+        },
+        {
+          "name": "Status",
+          "value": "scored",
+          "inline": true
+        },
+        {
+          "name": "Rule overrides",
+          "value": "fake contact cap: 2->1; FLAG fake contact: placeholder email 'test@test.com'; unparseable phone '555-0000'; placeholder name 'asdf'",
+          "inline": false
+        },
+        {
+          "name": "SMS draft",
+          "value": "Hi Asdf, thanks for reaching out to Blaze about your finance workflow. Happy to show how we handle it. Grab a 15-minute call: https://cal.com/your-handle/15min",
+          "inline": false
+        },
+        {
+          "name": "Email: Blaze for asdf",
+          "value": "Hi Asdf,\n\nThanks for your note about your finance workflow. Blaze pays bills, invoices clients, and forecasts cash for property managers.\n\nWould a 15-minute call help? Pick a time here: https://cal.com/your-handle/15min\n\nThe Blaze team",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Responded in 0.8s \u00b7 mock-llm \u00b7 review before sending"
+      }
+    }
+  ],
+  "allowed_mentions": {
+    "parse": []
+  }
+}
+
+======================================================================
+
