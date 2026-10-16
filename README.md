@@ -38,7 +38,7 @@ cp .env.example .env      # then fill it in (see below)
 
 | Key | What |
 |---|---|
-| `ANTHROPIC_API_KEY` | Claude API key |
+| `ANTHROPIC_API_KEY` | Claude API key (`BLAZE_ANTHROPIC_API_KEY` also works, for hosts that reserve the standard name) |
 | `ANTHROPIC_MODEL` | defaults to `claude-haiku-5-5` (latest Haiku, chosen for speed) |
 | `FB_APP_SECRET` | verifies `X-Hub-Signature-256`; `simulate.py` signs with it too |
 | `FB_VERIFY_TOKEN` | for Facebook's `GET /webhook` handshake |

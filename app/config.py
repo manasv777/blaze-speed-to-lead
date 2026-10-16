@@ -53,7 +53,8 @@ class Settings:
         load_dotenv(ROOT / ".env")
         mock_all = _bool("MOCK") if mock is None else mock
         s = cls(
-            anthropic_api_key=os.getenv("ANTHROPIC_API_KEY", ""),
+            # BLAZE_ANTHROPIC_API_KEY: for hosts that reserve ANTHROPIC_API_KEY (e.g. Claude Code cloud).
+            anthropic_api_key=os.getenv("ANTHROPIC_API_KEY") or os.getenv("BLAZE_ANTHROPIC_API_KEY", ""),
             model=os.getenv("ANTHROPIC_MODEL") or DEFAULT_MODEL,
             llm_timeout_s=float(os.getenv("LLM_TIMEOUT_S") or 15),
             fb_app_secret=os.getenv("FB_APP_SECRET") or DEV_APP_SECRET,
@@ -77,7 +78,7 @@ class Settings:
         """Config that would make the real (non-mock) path fail."""
         out = []
         if not self.mock_llm and not self.anthropic_api_key:
-            out.append("ANTHROPIC_API_KEY is empty (or run with --mock / MOCK_LLM=1)")
+            out.append("ANTHROPIC_API_KEY (or BLAZE_ANTHROPIC_API_KEY) is empty (or run with --mock / MOCK_LLM=1)")
         if not self.mock_sheet and not (self.sheets_url and self.sheets_token):
             out.append("SHEETS_WEBAPP_URL / SHEETS_TOKEN empty (or MOCK_SHEET=1)")
         if not self.mock_notify:
