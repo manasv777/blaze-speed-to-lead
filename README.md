@@ -122,6 +122,12 @@ The Blaze team
 Responded in 2.7s  (model: claude-haiku-5-5). Nothing was sent to the lead.
 ```
 
+**In the real services.** Rows landed in the Google Sheet's `Leads` tab, and alerts arrived in the Discord channel:
+
+![Google Sheet Leads tab with real lead rows](out/google_sheet.png)
+
+![Real Discord alert embed](out/discord_alert.png)
+
 ### What each preset scored (real run)
 
 Each preset was sent once with `simulate.py` against the real server. Each lead was scored on the first attempt, with no validation retries and no fallbacks. "Alert" is the time from webhook received to Discord post sent.
